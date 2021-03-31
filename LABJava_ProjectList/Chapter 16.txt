@@ -1,0 +1,47 @@
+16.1
+-The essence of the superscalar approach is the ability to execute instructions independently and concurrently in different pipelines.
+
+
+16.2
+-superpipeline and the superscalar have the same number of instructions executing at the same time in the steady state. The superpipelined processor falls behind the superscalar processor at the start of the program and at each branch target. 
+
+
+16.3
+-instruction-level parallelism A combination of compiler based optimization and hardware techniques can be used to maximize instruction level parallelism.
+
+
+16.4
+-True data dependency: Input of the next instruction is the output of the previous (RAW).
+-Procedural dependency: Previous instruction is a branch, code of the target can cause affects on input of the next.
+-Resource conflicts: 2 instructions access the same resource.(bus, registers).
+-Output dependency: 2 instructions write values to the same output (Write-after-write - WAW).
+-Anti-dependency: Write-after-read situation (WAR).
+
+
+16.5
+-Instruction level parallelism: Instructions in a sequence are independent And Execution can be overlapped.
+-Machine Parallelism: Ability to take advantage of instruction level parallelism And Governed by number of parallel pipelines.
+
+
+16.6
+Superscalar instruction issue policies:
+-In-order issue with in-order completion.
+-In-order issue with out-of-order completion.
+-Out-of-order issue with out-of-order completion.
+
+
+16.7
+-instruction window is used to store instructions which are ready for executing. After a processor has finished decoding an instruction, it is placed in it. As long as this buffer is not full, the processor can continue to fetch and decode new instructions. 
+
+
+16.8
+-Register renaming is a technique of duplication of resources (more registers are added).
+-Maximize the use of registers maximizing the number of storage conflicts if parallel execution is applied.
+
+16.9
+Key elements:
+-Instruction fetch strategies that simultaneously fetch multiple instruction.
+-Logic for determining true dependencies involving register values, and mechanisms for communicating these values to where they are needed during execution.
+-Mechanisms for initiating, or issuing, multiple instructions in parallel.
+-Resources for parallel execution of multiple instructions, including multiple pipelined functional units and memory hierarchies capable of simultaneously servicing multiple memory references.
+-Mechanisms for committing the process state in correct order.
